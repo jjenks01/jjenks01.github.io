@@ -14,19 +14,20 @@
 		.box {
 			display: block;
 			position: absolute;
-			width: 70px;
-			height: 70px;
+			width: 100px;
+			height: 80px;
 			top: 100px;
 			left: 0px;
-			background-image: url(https://www.emojirequest.com/images/RainbowHeartEmoji.jpg);
+			background-image: url(https://sfghf.org/wp-content/gallery/hearts-2018/2018-1_Shanahan-Lillian_Life-Finds-a-Way.png);
 			background-repeat: no-repeat;
 			background-size: 100% 100%;
-			font-size: 0%;
+			font-size: 200%;
 			text-align: center;
 		}
 		body{
-			background-image: url();
+			background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/BZBMrpQIiq3lg4cl/videoblocks-hearts-magenta-particles-background_s9xoswasg_thumbnail-full01.png");
 		}
+	
 	</style>
 
 </head>
@@ -43,6 +44,7 @@
 			// jQuery stuff setup for you
 			var box = $('.box');
 			var boardWidth = $('.board').width();
+			var boardHeight = $(window).height();
 			// TODO 2 - Variable declarations 
 			// TODO 2
 			var position;       // reference for the x-coordinate of our box
@@ -50,7 +52,7 @@
 			var speed;          // reference for how fast the box moves
 			var direction;
 			direction = 1;
-			position = 100;
+			position = 100;// x
 			points = 0;
 			speed = 10;
 			box.css('left', position);      // changes the 'left' css property of the box to value of var position
@@ -61,7 +63,10 @@
 				console.log("new position: " + position);
 				box.css('left', position);      // set the 'left' CSS property of the box to the new value of position
 				if(position > boardWidth) {
-				 direction = -1;
+				 direction = - 1;
+				}
+				if(position < 0 ){
+					direction = 1;
 				}
 			};
 
